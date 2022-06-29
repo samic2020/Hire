@@ -3,6 +3,7 @@ package com.samic.hire;
 import com.samic.funcoes.DataBasePassWordCrypto;
 import com.samic.funcoes.Db;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -32,21 +33,43 @@ public class addUser {
     public addUser() {}
     
     public boolean insertUser() {
+        boolean _retorno = false;
         conn = new Db(null);
         if (conn == null) return false;
         
-        String insertSQL = "INSERT INTO `usuarios`(`nome`, `login`, `senha`, `dtcadastro`, `menu`) " +
-                "VALUES (:nome, :login, :senha, :dtcadastro, :menu);";
-        String _senha = "";
-        Object[][] param = {
-            {"string","nome",user.trim()},
+        Object[][] param = null;
+        String deleteSQL = "DELETE FROM `usuarios` WHERE `login` = :login AND master = true;";
+        param = new Object[][] {
             {"string","login",login.trim()},
-            {"string","senha",password.trim()},
-            {"date","dtcadastro",new Date()},
-            {"String","menu","001;002:1111"}
         };
-        boolean _retorno = conn.CommandExecute(insertSQL, param) > 0;
+
+        _retorno = conn.CommandExecute(deleteSQL, param) > 0;
+        
+        if (_retorno) {
+            String insertSQL = "INSERT INTO `usuarios`(`nome`, `login`, `senha`, `dtcadastro`, `menu`, `master`) " +
+                    "VALUES (:nome, :login, :senha, :dtcadastro, :menu, :master);";
+            param = new Object[][] {
+                {"string","nome",user.trim()},
+                {"string","login",login.trim()},
+                {"string","senha",password.trim()},
+                {"date","dtcadastro",new Date()},
+                {"String","menu","001;002:1111"},
+                {"boolean","master",true}
+            };
+            _retorno = conn.CommandExecute(insertSQL, param) > 0;
+        }
         try {conn.CloseDb();} catch (Exception ex) {}
         return _retorno;
-    }           
+    }
+    
+    public List listUser(String type) {
+        if (type.equalsIgnoreCase("ALL")) {
+            
+        } else if (type.equalsIgnoreCase("MASTER")) {
+            
+        } else {
+            // <user>
+        }
+        return null;
+    }
 }

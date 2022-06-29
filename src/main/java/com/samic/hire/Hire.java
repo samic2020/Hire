@@ -2,7 +2,6 @@ package com.samic.hire;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.samic.funcoes.DataBasePassWordCrypto;
-import com.samic.funcoes.Db;
 import com.samic.funcoes.Globais;
 import java.awt.Color;
 import java.awt.Insets;
@@ -235,7 +234,45 @@ public class Hire {
                     }
                 }
             } else if (args[0].equalsIgnoreCase("--SUPER")) {
-                
+                if (args[1].equalsIgnoreCase("--SHOW")) {
+                    if (args.length == 3) {
+                        addUser adduser = new addUser();
+                        adduser.listUser(args[2].toString());
+                        // List<> adduser.listUser(args[2].toString());
+                    } else {
+                        System.out.println("=====================================================");
+                        System.out.println("--SUPER --SHOW commands");
+                        System.out.println("=====================================================");
+                        System.out.println("ALL - Show all users of system. (Except master user.)");
+                        System.out.println("MASTER - Show master user of system.");
+                        System.out.println("<user> - Show the user of system.");
+                        System.out.println("");
+                        System.out.println("Command sintaxe:");
+                        System.out.println("");
+                        System.out.println("--SUPER --SHOW ALL|MASTER|<user>");
+                        System.out.println("");
+                        System.out.println("--SUPER --SHOW ALL");
+                        System.out.println("--SUPER --SHOW MASTER");
+                        System.out.println("--SUPER --SHOW <user>");                        
+                        System.out.println("");                        
+                    }
+                } else {
+                    System.out.println("=====================================================");
+                    System.out.println("--SUPER --SHOW commands");
+                    System.out.println("=====================================================");
+                    System.out.println("ALL - Show all users of system. (Except master user.)");
+                    System.out.println("MASTER - Show master user of system.");
+                    System.out.println("<user> - Show the user of system.");
+                    System.out.println("");
+                    System.out.println("Command sintaxe:");
+                    System.out.println("");
+                    System.out.println("--SUPER --SHOW ALL|MASTER|<user>");
+                    System.out.println("");
+                    System.out.println("--SUPER --SHOW ALL");
+                    System.out.println("--SUPER --SHOW MASTER");
+                    System.out.println("--SUPER --SHOW <user>");                        
+                    System.out.println("");                        
+                }
             } else if (args[0].equalsIgnoreCase("--HELP")) {
                 System.out.println("=====================================================");
                 System.out.println("--MAKE --REMOTE commands:");
