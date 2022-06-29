@@ -1,0 +1,159 @@
+JFDML JFormDesigner: "7.0.5.0.404" Java: "1.8.0_231" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JInternalFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :::p, par l {seq t {comp foto:::p:130:p, par l {seq l {space :p:19:p, comp label1:::p::p, space :p:22:p, comp id:::p:56:p, space u:::p, comp label2:::p::p, space :::p, comp nome:::::x}, seq l {space :::p, comp label9:::::x}, seq l {space :p:12:p, par l {seq {comp label4:::p:36:p, space :p:12:p, comp login:::p:178:p, space :::p, comp label5:::p:36:p, space :::p, comp senha:::p:178:p, space :::x, comp redefine:::p::p}, seq {comp label6:::p:88:p, space :::p, comp dtcadastro:::p:114:p, space :p:66:p, par l {comp menu::l:p:55:p, seq l {space :6:6:p, comp label3:::p::p, space :::p, comp telefone::::210:x}}, space :::p, comp btnTelAdd:::p:20:p, space :::p, comp btnTelDel:::p:20:p}}}}}, comp panel1::l:::x, comp panelTree::l:::x}, space :::p}}"
+			"$verticalGroup": "par l {seq {space :::p, par l:::p {seq {par b {comp label1::b:p::p, comp id::b:p::p, comp label2::b:p::p, comp nome::b:p::p}, space :::p, par b {comp label4::b:p::p, comp senha::b:p::p, comp label5::b:p::p, comp redefine::b:p::p, comp login::b:p::p}, space :::x, par l:::p {comp btnTelDel::l:::x, comp btnTelAdd:::::x, seq l {comp menu:::p:24:p, space :::p, par b {comp label6::b:p::p, comp label3::b:p::p, comp telefone::b:p::p, comp dtcadastro::b:p::p}}}, space :p:8:p, comp label9:::p:39:p}, comp foto:::p:131:p}, space ::11:x, comp panelTree:::::x, space :::p, comp panel1:::p::p, space :::p}}"
+		} ) {
+			name: "this"
+			"visible": true
+			"title": ".:: Cadastro de Usuários."
+			"iconifiable": true
+			"frameIcon": new com.jformdesigner.model.SwingIcon( 0, "/cadastro/usuarios.png" )
+			"minimumSize": new java.awt.Dimension( 740, 470 )
+			"maximumSize": new java.awt.Dimension( 740, 470 )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Id:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "id"
+				"editable": false
+				"focusable": false
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+				"horizontalAlignment": 0
+				"text": "0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Nome:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "nome"
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "nomeFocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "nomeFocusLost", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "foto"
+				"border": new javax.swing.border.BevelBorder( 1, null, null, null, null )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Login:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "login"
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "loginFocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "loginFocusLost", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Senha:"
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "senha"
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "senhaFocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "senhaFocusLost", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "redefine"
+				"text": "Redefinir senha."
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :::p, comp btnIncluir:::p::p, space :::p, comp btnAlterar:::p::p, space :::p, comp btnExcluir:::p::p, space :p:29:p, comp btnPesquisar:::p::p, space :::x, comp btnGravar:::p::p, space :::p, comp btnRetornar:::p::p, space :::p}}"
+				"$verticalGroup": "par l {seq l {space :::p, par b {comp btnRetornar::b:p::p, comp btnGravar::b:p::p, comp btnIncluir::b:p::p, comp btnAlterar::b:p::p, comp btnExcluir::b:p::p, comp btnPesquisar::b:p::p}, space :::x}}"
+			} ) {
+				name: "panel1"
+				"border": &EtchedBorder0 new javax.swing.border.EtchedBorder( 1, null, null )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnIncluir"
+					"text": "Incluir"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/cadastro/user-add.png" )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnIncluir", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnAlterar"
+					"text": "Alterar"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/cadastro/user-edit.png" )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAlterar", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnExcluir"
+					"text": "Ecluir"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/cadastro/user-delete.png" )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnPesquisar"
+					"text": "Pesquisar"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/cadastro/lupa.png" )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnGravar"
+					"text": "Gravar"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/cadastro/save.png" )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnGravar", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnRetornar"
+					"text": "Retornar"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/cadastro/sair.png" )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnRetornar", true ) )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnRetornar", true ) )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnRetornar", true ) )
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:707:x}"
+				"$verticalGroup": "par l {space :0:218:x}"
+			} ) {
+				name: "panelTree"
+				"border": #EtchedBorder0
+				"maximumSize": new java.awt.Dimension( 711, 217 )
+				"minimumSize": new java.awt.Dimension( 711, 217 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label9"
+				"text": "Configurações de Acesso"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/cadastro/menu.png" )
+				"opaque": true
+				"background": sfield java.awt.SystemColor windowBorder
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "Data Cadastro:"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "menu"
+				"visible": false
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Tel.:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "telefone"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnTelAdd"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/plus.png" )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnTelAdd", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnTelDel"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/minus.png" )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnTelDel", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "dtcadastro"
+				"editable": false
+				"opaque": true
+				"horizontalAlignment": 0
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 735, 480 )
+			"location": new java.awt.Point( 5, 10 )
+		} )
+	}
+}
